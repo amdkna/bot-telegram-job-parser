@@ -1,6 +1,8 @@
 #Environment
 .env
 env_job/
+data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
