@@ -1,11 +1,15 @@
-# settings.py - configuration constants
+# config/settings.py
+import os
+from dotenv import load_dotenv
 
-# Telegram
-BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+# Load .env from project root (run this once)
+load_dotenv()
 
-# LLM API
-LLM_API_URL = 'https://api.example.com/v1/generate'
-LLM_API_KEY = 'YOUR_API_KEY'
+# Now fetch sensitive values from the environment
+BOT_TOKEN    = os.getenv('BOT_TOKEN')
+LLM_API_URL  = os.getenv('LLM_API_URL')
+LLM_API_KEY  = os.getenv('LLM_API_KEY')
+DB_URL       = os.getenv('DB_URL')
 
-# Database
-DB_URL = 'postgresql://user:pass@localhost:5432/jobsynth'
+# Non-sensitive defaults
+DATA_DIR     = 'data/html'
